@@ -89,6 +89,98 @@ for(i=1; i<=12; i++){
 }
 console.log("Tu ahorro del anio fue:" + suma);
 
+/*Ejercicio #7: Horas de trabajo
+Una empresa tiene el registro de las horas que trabaja diariamente un empleado durante la semana (seis días) y requiere determinar el total de éstas, así como el sueldo que recibirá por las horas trabajadas.
+Realice un algoritmo para determinar esto y represéntelo mediante el diagrama de flujo y el pseudocódigo utilizando el ciclo apropiado.*/
+
+var sueldoHora=0;
+var horasDia=0;
+var horasTotal=0;
+
+sueldoHora=Number(prompt("Ingresa el sueldo por hora ",0));
+for(i=1; i<=6; i++){
+	horasDia=Number(prompt("Ingresa las horas trabajadas del dia "+i ,0));
+	horasTotal+=horasDia;
+}
+console.log("Sueldo por Hora :" + sueldoHora);
+console.log("Horas Trabajadas :" + horasTotal);
+console.log("El sueldo de la semana es :" + (horasTotal*sueldoHora));
+
+/*Ejercicio #8: Tiki Taka
+Un empleado de la tienda “Tiki Taka” realiza N ventas durante el día;se requiere saber cuántas de ellas: • Fueron mayores a $1000, • Cuántas fueron mayores a $500 pero menores o iguales a $1000 • Cuántas fueron menores o iguales a $500. • Además, se requiere saber el monto de lo vendido en cada categoría y de forma global.
+Realice un algoritmo que permita determinar lo anterior y represéntelo mediante el diagrama de flujo y el pseudocódigoutilizando el ciclo apropiado*/
+var n=0; //numero de ventas del dia
+var m=0; //monto de una ventas
+var v1=0; //cantidad de ventas >1000
+var v2=0; //cantidad de ventas >500 y <=1000
+var v3=0; //cantidad de ventas <=500
+var m1=0; //monto de ventas >1000
+var m2=0; //monto de ventas >500 y <=1000
+var m3=0; //monto de ventas <=500
+var t=0;  //monto total
+n=Number(prompt("Ingresa la cantidad de ventas del dia ",0));
+for(i=1; i<=n; i++){
+	m=Number(prompt("Ingresa el monto de la venta "+i ,0));
+	t+=m;
+	if(m>1000){
+		m1=m1+m;
+		v1++;
+	}else if(m<=500){
+		m3=m3+m;
+		v3++;
+	}else{
+		m2=m2+m;
+		v2++;
+	}
+}
+console.log("Cantidad Ventas <= $500: " + v3 + " Monto $"+m3);
+console.log("Cantidad Ventas > $500 y hasta $1000: " + v2 + " Monto $"+m2);
+console.log("Cantidad Ventas > $1000: " + v1 + " Monto $"+m1);
+console.log("Ventas totales: "+n + " Monto total $"+t);
+
+/*Ejercicio #9: Mensualidades
+Una persona adquirió un producto para pagar en 20 meses. El primer mes pagó $10, el segundo $20, el tercero $40 y así sucesivamente.
+Realice un algoritmo para determinar cuánto debe pagar mensualmente y el total de lo que pagó después de los 20 meses y represéntelo mediante el diagrama de flujo y el pseudocódigo utilizando el ciclo apropiado.*/
+var m=5; //monto de la mensualidad
+var t=0; //total a pagar
+
+for(i=1; i<=20; i++){
+	m=2*m;
+	console.log("La mensualidad " + i + " es $" + m);
+	t+=m;
+}
+console.log("Costo total $"+ t);
+
+/*Ejercicio #10: Tienda de autoservicio
+La cadena de tiendas de autoservicio “El mandilón” cuenta con sucursales en C ciudades diferentes de la República, en cada ciudad cuenta con T tiendas y cada tienda cuenta con N empleados, asimismo, cada una registra lo que vende de manera individual cada empleado, cuánto fue lo que vendió cada tienda, cuánto se vendió en cada ciudad y cuánto recaudó la cadena en un solo día.
+Realice un algoritmo para determinar lo anterior y represéntelo mediante un diagrama de flujo, utilizando el ciclo apropiado.*/
+var C=0; //cantidad de ciudades
+var T=0; //cantidad de tiendas por ciudad
+var N=0; //cantidad de empleados por tienda
+var m=0; //monto vendido por empleado
+var v1=0; //monto vendido en la cadena
+var v2=0; //monto vendido en la ciudad
+var v3=0; //monto vendido en la tienda
+
+C=Number(prompt("Ingresa cantidad de ciudades de Tiendas Mandilon"));
+for(i=1; i<=C; i++){
+	T=Number(prompt("Ingresa cantidad de tiendas de la ciudad " + i));
+	for(j=1; j<=T; j++){
+		N=Number(prompt("Ingresa cantidad de empleados de la ciudad " + i + " tienda " + j));
+		for(k=1; k<=N; k++){
+			m=Number(prompt("Ingresa el monto vendido del empleado " + k + " de la tienda " + j + " ciudad " + i));
+			v3=v3+m;
+		}
+		console.log("El monto vendido en la tienda " + j + " ciudad " + i + " fue $" + v3);
+		v2=v2+v3;
+	}
+	console.log("El monto vendido en la ciudad " + i + " fue $" + v2);
+	v1=v1+v2;
+}
+console.log("El monto vendido por toda la cadena $"+ v1);
+
+
+
 
 
 
