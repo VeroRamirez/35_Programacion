@@ -1,3 +1,4 @@
+/*****************************Ejercicios varios*************************/
 
 /*Ejercicio #1: SUMA 10 NUMEROS CICLO WHILE
 Se requiere un algoritmo para obtener la suma de diez cantidades mediante la utilización de un ciclo “WHILE”.
@@ -166,7 +167,3 @@ for(i=1; i<=10; i++){
 	cuarta=cubo*n;
 	console.log(n + " al cubo "+ cubo +", "+ n + " a la cuarta "+ cuarta);
 }
-
-
-
-
