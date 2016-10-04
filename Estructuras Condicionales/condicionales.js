@@ -119,3 +119,48 @@ if(suma[0]>suma[1]){
 }else{
 	console.log("Lista 1 es igual a Lista 2 acumulado:",suma[0]);
 }
+/*Ejercicio #9: Traduciendo palabras
+Solicitar el ingreso alguna de estas palabras (casa, mesa, perro, gato) luego mostrar la palabra traducida en inglés. Es decir, si se ingresa 'casa' debemos mostrar el texto 'house' en la página.
+Realizar este ejercicio con la estructura switch*/
+var palabra = prompt("Traductor\nIngresa una palabra a traducir (casa,mesa,perro,gato)");
+switch(palabra){
+	case 'casa':
+		console.log("house");
+		break;
+	case 'mesa':
+		console.log("table");
+		break;
+	case 'perro':
+		console.log("dog");
+		break;
+	case 'gato':
+		console.log("cat");
+		break;
+	default:
+		console.log("No contamos con la traduccion de la palabra",palabra);
+		break;
+}
+/*Ejercicio #10: Censo provincial
+Se realizó un censo provincial y se desea procesar la información obtenida en dicho censo. De cada una de las personas censadas se tiene la siguiente información: número de documento, edad y sexo ('femenino' o 'masculino') Se pide confeccionar un programa que lea los datos de cada persona censada (para finalizar ingresar el valor cero en el número de documento) e informar:
+a) Cantidad total de personas censadas. b) Cantidad de varones. c) Cantidad de mujeres. d) Cantidad de varones cuya edad varía entre 16 y 65 años.*/
+var mujeres=0;
+var varones=0;
+var varonesMayores=0;
+var personas=0;
+do{
+	numDocumento=parseInt(prompt("Censo Provincial\nIngresar numero de documento (Para salir teclea 0):","0"));
+	console.log(numDocumento);
+	if(numDocumento==0){continue;}
+	sexo=prompt("Censo Provincial\nIngresar Sexo(femenino,masculino) de "+numDocumento,"0");
+	edad=prompt("Censo Provincial\nIngresar Edad de :"+numDocumento,"0");
+	if(sexo.toLowerCase()=="femenino"){
+		mujeres++;
+	}else if(sexo.toLowerCase()=="masculino"){
+		if(edad>=16 && edad<=65){
+			varonesMayores++;
+		}
+		varones++;
+	}
+	personas++;
+}while(numDocumento!=0);
+console.log("Personas censdas:"+personas+"\nTotal Varones:"+varones+"\nTotal Mujeres"+mujeres+"\nTotal Varones 16-65:"+varonesMayores);
